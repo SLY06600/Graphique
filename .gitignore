@@ -1,0 +1,59 @@
+# Visual Studio / .NET generated files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+build/
+artifacts/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+packages/
+*.nupkg
+.nuget/
+
+# dotnet
+project.lock.json
+project.fragment.lock.json
+**/project.assets.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and database files
+*.log
+*.db
+*.dbmdl
+
+# Rider / Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper*
+
+# Others
+*.userprefs
+*.userosscache
+
+# Ignore publish output
+publish/
+
+# Ignore generated VS files
+*.vspx
+
+# Ignore test results
+TestResults/
+
+# Ignore temporary files
+*.tmp
+
+# Keep the README and source files tracked
+!README.md
