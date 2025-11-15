@@ -1,0 +1,144 @@
+﻿<Window x:Class="MonProjetGraphiques.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        Title="Exemple Tous Graphiques" Height="1200" Width="1100">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="260"/>
+            </Grid.RowDefinitions>
+
+            <!-- ================= LINE CHART ================= -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Line Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding LineSeries}" />
+            </Grid>
+
+            <!-- ================= COLUMN CHART ================= -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Column Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding ColumnSeries}" />
+            </Grid>
+
+            <!-- ================= BAR CHART ================= -->
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Bar Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <Canvas Grid.Row="1" x:Name="BarCanvas" Background="White" />
+            </Grid>
+
+            <!-- ================= STEP LINE CHART ================= -->
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Step Line Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding StepLineSeries}" />
+            </Grid>
+
+            <!-- ================= SCATTER CHART ================= -->
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Scatter Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding ScatterSeries}" />
+            </Grid>
+
+            <!-- ================= PIE CHART ================= -->
+            <Grid Grid.Row="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Pie Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:PieChart Grid.Row="1" Series="{Binding PieSeries}" />
+            </Grid>
+
+            <!-- ================= FINANCIAL (CUSTOM CANVAS) ================= -->
+            <Grid Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Financial Chart (Candlesticks)" FontWeight="Bold" FontSize="16" Margin="0,0,10,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <CheckBox x:Name="ShowCloseCheckBox" Content="Show Close Line" Margin="8,0" IsChecked="False"/>
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Canvas x:Name="FinancialCanvas" Background="White" />
+                </Grid>
+            </Grid>
+
+            <!-- ================= RADAR CHART ================= -->
+            <Grid Grid.Row="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Radar Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:PolarChart Grid.Row="1" Series="{Binding RadarSeries}" />
+            </Grid>
+
+            <!-- ================= HEATMAP ================= -->
+            <Grid Grid.Row="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Heatmap" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding HeatmapSeries}" />
+            </Grid>
+
+            <!-- ================= AREA CHART ================= -->
+            <Grid Grid.Row="9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Area Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <lvc:CartesianChart Grid.Row="1" Series="{Binding AreaSeries}" />
+            </Grid>
+
+            <!-- ================= GANTT (CUSTOM CANVAS) ================= -->
+            <StackPanel Grid.Row="10">
+                <TextBlock Text="Gantt Chart" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="220">
+                    <Canvas x:Name="GanttCanvas" Background="WhiteSmoke" Height="200" Width="1200"/>
+                </ScrollViewer>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
